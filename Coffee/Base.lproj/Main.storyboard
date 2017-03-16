@@ -1,26 +1,139 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E189a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="erM-ar-0LX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Coffee Guide-->
+        <scene sceneID="7o1-Ur-f2X">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="cb9-1t-oOz" customClass="CoffeeTableViewController" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="d0y-ty-eDh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" alpha="0.20000000000000001" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="coffeeCell" rowHeight="70" id="zHC-zh-PgC" customClass="CoffeeTableViewCell" customModule="Coffee" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zHC-zh-PgC" id="fx0-9c-0He">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoffeeName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m1g-59-UdE">
+                                            <rect key="frame" x="8" y="18" width="326" height="33.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="m1g-59-UdE" firstAttribute="leading" secondItem="fx0-9c-0He" secondAttribute="leadingMargin" id="MrV-7u-G4B"/>
+                                        <constraint firstItem="m1g-59-UdE" firstAttribute="centerY" secondItem="fx0-9c-0He" secondAttribute="centerY" id="SEB-a5-Dht"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="m1g-59-UdE" secondAttribute="trailing" id="o9r-yA-27E"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="coffeNameLabel" destination="m1g-59-UdE" id="ACY-ap-KBT"/>
+                                    <segue destination="9vX-De-76e" kind="show" identifier="showDetailSegue" id="r1j-Ll-8A4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cb9-1t-oOz" id="dky-Bx-J8V"/>
+                            <outlet property="delegate" destination="cb9-1t-oOz" id="ILr-h9-99f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Coffee Guide" id="eJD-QJ-DpV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7z-kR-AoH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="879.375" y="97.5"/>
+        </scene>
+        <!--Coffee Detail View Controller-->
+        <scene sceneID="FYE-KJ-WqI">
+            <objects>
+                <viewController id="9vX-De-76e" customClass="CoffeeDetailViewController" customModule="Coffee" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pak-3Q-cWY"/>
+                        <viewControllerLayoutGuide type="bottom" id="cMd-PB-I8W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nPt-wh-lTh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XUc-6n-77R">
+                                <rect key="frame" x="0.0" y="72" width="375" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XUc-6n-77R" secondAttribute="height" multiplier="75:46" id="lg9-Tg-pC6"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vdc-yS-nqM">
+                                <rect key="frame" x="16" y="310" width="343" height="151"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vdc-yS-nqM" secondAttribute="height" multiplier="343:151" id="kaM-sV-bIS"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gq-7a-vct">
+                                <rect key="frame" x="0.0" y="469" width="375" height="190"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XUc-6n-77R" firstAttribute="top" secondItem="Pak-3Q-cWY" secondAttribute="bottom" constant="8" id="6cf-T9-qzc"/>
+                            <constraint firstItem="1gq-7a-vct" firstAttribute="leading" secondItem="nPt-wh-lTh" secondAttribute="leading" id="Vzt-lI-uwG"/>
+                            <constraint firstAttribute="trailing" secondItem="1gq-7a-vct" secondAttribute="trailing" id="WIR-FT-4F0"/>
+                            <constraint firstItem="XUc-6n-77R" firstAttribute="leading" secondItem="nPt-wh-lTh" secondAttribute="leading" id="Z4v-Hz-Ek7"/>
+                            <constraint firstItem="Vdc-yS-nqM" firstAttribute="leading" secondItem="nPt-wh-lTh" secondAttribute="leadingMargin" id="Zs4-BF-FVD"/>
+                            <constraint firstItem="Vdc-yS-nqM" firstAttribute="trailing" secondItem="nPt-wh-lTh" secondAttribute="trailingMargin" id="cUw-oy-K6G"/>
+                            <constraint firstItem="cMd-PB-I8W" firstAttribute="top" secondItem="1gq-7a-vct" secondAttribute="bottom" constant="8" id="lDa-n4-GSX"/>
+                            <constraint firstItem="1gq-7a-vct" firstAttribute="top" secondItem="Vdc-yS-nqM" secondAttribute="bottom" constant="8" id="nFs-yZ-wUb"/>
+                            <constraint firstAttribute="trailing" secondItem="XUc-6n-77R" secondAttribute="trailing" id="oce-6V-eW2"/>
+                            <constraint firstItem="Vdc-yS-nqM" firstAttribute="top" secondItem="XUc-6n-77R" secondAttribute="bottom" constant="8" id="wD7-2w-wkW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coffeDescription" destination="Vdc-yS-nqM" id="cOA-Wf-Wot"/>
+                        <outlet property="coffeImage" destination="XUc-6n-77R" id="gBo-jj-i6w"/>
+                        <outlet property="coffeVideo" destination="1gq-7a-vct" id="xte-hO-Iw0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fLK-FN-EcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.2" y="98.50074962518741"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4M4-1O-C6x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="erM-ar-0LX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpn-sx-Sbi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cb9-1t-oOz" kind="relationship" relationship="rootViewController" id="qzw-Q7-usq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncy-Vh-AM9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-58.399999999999999" y="98.50074962518741"/>
         </scene>
     </scenes>
 </document>
